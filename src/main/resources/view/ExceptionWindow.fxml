@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="399.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ExceptionWindow">
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="500.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="94.0" text="Внимание" textAlignment="RIGHT">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="errLabel" contentDisplay="CENTER" text="Label" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#ok" prefHeight="25.0" prefWidth="70.0" text="OK" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

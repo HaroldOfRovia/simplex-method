@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.HelpWindow">
+    <children>
+        <VBox prefHeight="500.0" prefWidth="500.0">
+            <children>
+                <Label fx:id="helpLabel" contentDisplay="CENTER" text="Label" wrapText="true">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+                    </VBox.margin>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#ok" prefHeight="25.0" prefWidth="70.0" text="OK">
+                    <VBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0"/>
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

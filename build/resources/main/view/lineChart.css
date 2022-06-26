@@ -1,0 +1,10 @@
+.default-color0.chart-series-line {
+    -fx-stroke: transparent;
+}
+
+.default-color0.chart-line-symbol {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-background-color: black, black;
+}
+

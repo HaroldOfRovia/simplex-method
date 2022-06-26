@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.StartWindow">
+    <stylesheets>
+        <URL value="@lineChart.css"/>
+    </stylesheets>
+    <children>
+        <BorderPane prefHeight="800.0" prefWidth="1200.0">
+            <right>
+                <VBox prefHeight="690.0" prefWidth="350.0"
+                      style="-fx-border-width: 0 0 0 1; -fx-border-color: lightgray;" BorderPane.alignment="CENTER">
+                    <children>
+                        <VBox prefHeight="653.0" prefWidth="349.0">
+                            <children>
+                                <VBox fx:id="countControlPane" prefHeight="70.0" prefWidth="349.0">
+                                    <children>
+                                        <HBox prefHeight="31.0" prefWidth="349.0">
+                                            <children>
+                                                <VBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="175.0">
+                                                    <children>
+                                                        <Label text="Кол-во переменных:">
+                                                            <font>
+                                                                <Font size="14.0"/>
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets left="15.0"/>
+                                                            </VBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+                                                <VBox alignment="BOTTOM_LEFT" prefHeight="100.0" prefWidth="175.0"
+                                                      style="-fx-border-width: 0 0 0 1; -fx-border-color: lightgray;">
+                                                    <children>
+                                                        <Label text="Кол-во уравнений:">
+                                                            <VBox.margin>
+                                                                <Insets/>
+                                                            </VBox.margin>
+                                                            <font>
+                                                                <Font size="14.0"/>
+                                                            </font>
+                                                            <opaqueInsets>
+                                                                <Insets/>
+                                                            </opaqueInsets>
+                                                            <padding>
+                                                                <Insets left="15.0"/>
+                                                            </padding>
+                                                        </Label>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                        <HBox prefHeight="40.0" prefWidth="350.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="175.0">
+                                                    <children>
+                                                        <Button alignment="CENTER" mnemonicParsing="false"
+                                                                onAction="#addX" style="-fx-min-width: 25;" text="+">
+                                                            <HBox.margin>
+                                                                <Insets left="15.0" right="10.0"/>
+                                                            </HBox.margin>
+                                                        </Button>
+                                                        <Button alignment="CENTER" mnemonicParsing="false"
+                                                                onAction="#deleteX" style="-fx-min-width: 25;" text="-">
+                                                            <HBox.margin>
+                                                                <Insets right="10.0"/>
+                                                            </HBox.margin>
+                                                        </Button>
+                                                        <Label fx:id="countX" text="2">
+                                                            <font>
+                                                                <Font size="14.0"/>
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets left="50.0"/>
+                                                            </HBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="175.0"
+                                                      style="-fx-border-width: 0 0 00 1; -fx-border-color: lightgray;">
+                                                    <children>
+                                                        <Button alignment="CENTER" mnemonicParsing="false"
+                                                                onAction="#addEquation" style="-fx-min-width: 25;"
+                                                                text="+">
+                                                            <HBox.margin>
+                                                                <Insets left="15.0" right="10.0"/>
+                                                            </HBox.margin>
+                                                        </Button>
+                                                        <Button alignment="CENTER" mnemonicParsing="false"
+                                                                onAction="#deleteEquation" style="-fx-min-width: 25;"
+                                                                text="-">
+                                                            <HBox.margin>
+                                                                <Insets right="10.0"/>
+                                                            </HBox.margin>
+                                                        </Button>
+                                                        <Label fx:id="countEquation" text="1">
+                                                            <font>
+                                                                <Font size="14.0"/>
+                                                            </font>
+                                                            <HBox.margin>
+                                                                <Insets left="50.0"/>
+                                                            </HBox.margin>
+                                                        </Label>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <VBox fx:id="currentFunction" alignment="CENTER" prefHeight="50.0" prefWidth="349.0"
+                                      style="-fx-border-color: lightgray; -fx-border-width: 1 0 1  0;"/>
+                            </children>
+                        </VBox>
+                        <StackPane prefHeight="82.0" prefWidth="349.0"
+                                   style="-fx-border-color: lightgray; -fx-border-width: 1 0 0 0;">
+                            <children>
+                                <VBox fx:id="startPaneControl" prefHeight="82.0" prefWidth="349.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="349.0">
+                                            <children>
+                                                <Button mnemonicParsing="false" onAction="#fastAnswer" prefHeight="25.0"
+                                                        prefWidth="248.0" text="Получить ответ сразу (симплекс метод)"/>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="5.0" top="10.0"/>
+                                            </padding>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="349.0">
+                                            <children>
+                                                <Button mnemonicParsing="false" onAction="#startChart"
+                                                        text="Графический метод">
+                                                    <HBox.margin>
+                                                        <Insets right="15.0"/>
+                                                    </HBox.margin>
+                                                </Button>
+                                                <Button mnemonicParsing="false" onAction="#startSolution"
+                                                        text="Сипмлекс метод"/>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="10.0" top="5.0"/>
+                                            </padding>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <HBox fx:id="simplexPaneControl" alignment="CENTER" prefHeight="100.0" prefWidth="200.0"
+                                      visible="false">
+                                    <children>
+                                        <HBox prefHeight="40.0" prefWidth="175.0"/>
+                                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="175.0">
+                                            <children>
+                                                <Button mnemonicParsing="false" onAction="#previousStep"
+                                                        text="&lt;&lt;"/>
+                                                <Button mnemonicParsing="false" onAction="#nextStepAny" text="&gt;&gt;">
+                                                    <HBox.margin>
+                                                        <Insets left="15.0"/>
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </StackPane>
+                    </children>
+                </VBox>
+            </right>
+            <center>
+                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="71.0" prefWidth="750.0"
+                              style="-fx-border-width: 0 0 1 0; -fx-border-color: lightgray;">
+                            <children>
+                                <HBox prefHeight="70.0" prefWidth="797.0">
+                                    <children>
+                                        <HBox fx:id="gridPanePlaceFun" alignment="CENTER" prefHeight="70.0"
+                                              prefWidth="711.0"/>
+                                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="72.0">
+                                            <children>
+                                                <Label text="--&gt;  min">
+                                                    <font>
+                                                        <Font size="14.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <Button onAction="#helpWindow" defaultButton="true" mnemonicParsing="false" prefHeight="25.0"
+                                        prefWidth="25.0" style="-fx-background-radius: 50%; -fx-border-width: 1px;"
+                                        text="?">
+                                    <HBox.margin>
+                                        <Insets top="12.0"/>
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets/>
+                            </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="gridPanePlaceEqu" alignment="CENTER_LEFT" prefHeight="665.0" prefWidth="835.0">
+                            <padding>
+                                <Insets bottom="20.0" right="20.0" top="20.0"/>
+                            </padding>
+                        </HBox>
+                    </children>
+                </VBox>
+            </center>
+            <top>
+                <MenuBar BorderPane.alignment="CENTER">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Файл">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#getTask" text="Загрузить"/>
+                                <MenuItem mnemonicParsing="false" onAction="#saveTask" text="Сохранить"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Внешний вид">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#switchViewNumbers" text="Вид дроби"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <left>
+                <VBox prefHeight="705.0" prefWidth="15.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="71.0" prefWidth="100.0"
+                              style="-fx-border-color: lightgray; -fx-border-width: 0 0 1 0;"/>
+                    </children>
+                </VBox>
+            </left>
+            <bottom>
+                <HBox prefHeight="40.0" prefWidth="1200.0"
+                      style="-fx-border-color: lightgray; -fx-border-width: 1 0 0 0;" BorderPane.alignment="CENTER">
+                    <children>
+                        <VBox prefHeight="39.0" prefWidth="1045.0">
+                            <children>
+                                <HBox fx:id="answerPlace" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                    <padding>
+                                        <Insets left="15.0"/>
+                                    </padding>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="39.0" prefWidth="150.0">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#clearAll" prefHeight="25.0" prefWidth="59.0"
+                                        text="Сброс"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>
